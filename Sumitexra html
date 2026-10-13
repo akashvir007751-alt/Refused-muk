@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSYCHO | My World</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:white;
+  background:#080910;
+}
+header{
+  text-align:center;
+  padding:35px 15px;
+  background:linear-gradient(135deg,#170b25,#5d101c,#111827);
+  border-bottom:2px solid #ffbd35;
+}
+header h1{color:#ffc43d;margin:0;font-size:32px}
+header p{color:#ddd}
+main{max-width:650px;margin:auto;padding:18px}
+.card{
+  background:#151621;
+  border:1px solid #38303c;
+  border-radius:15px;
+  overflow:hidden;
+  margin:22px 0;
+  box-shadow:0 8px 25px #0008;
+}
+.card img{
+  width:100%;
+  display:block;
+  cursor:pointer;
+}
+.content{padding:16px}
+h2{color:#ffca48;margin-top:0}
+p{line-height:1.7;color:#ddd}
+button{
+  border:0;
+  background:#ffbd35;
+  color:#17100a;
+  font-weight:bold;
+  padding:12px 18px;
+  border-radius:8px;
+  cursor:pointer;
+}
+#detail{display:none}
+#detail img{width:100%;border-radius:12px}
+.back{margin-bottom:18px}
+footer{
+  text-align:center;
+  padding:24px;
+  color:#aaa;
+  border-top:1px solid #333;
+}
+</style>
+</head>
+
+<body>
+<header>
+  <h1>⚡ PSYCHO ⚡</h1>
+  <p>My Gaming World & My Memories</p>
+</header>
+
+<main>
+  <section id="gallery">
+
+    <div class="card">
+      <img src="game.jpg" alt="Free Fire profile"
+           onclick="showPage(0)">
+      <div class="content">
+        <h2>🔥 FREE FIRE PROFILE</h2>
+        <p>Mera gaming profile aur meri Free Fire ki duniya.</p>
+        <button onclick="showPage(0)">View Profile →</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="qr.jpg" alt="QR image"
+           onclick="showPage(1)">
+      <div class="content">
+        <h2>📸 MY QR PHOTO</h2>
+        <p>Yahan apna message aur photo ki details likho.</p>
+        <button onclick="showPage(1)">View Photo →</button>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="detail">
+    <button class="back" onclick="goBack()">← Back</button>
+    <img id="bigImage" src="" alt="Selected photo">
+    <div class="content">
+      <h2 id="title"></h2>
+      <p id="description"></p>
+    </div>
+  </section>
+</main>
+
+<footer>Made with ❤️ by PSYCHO</footer>
+
+<script>
+const data = [
+  {
+    image: "game.jpg",
+    title: "🔥 My Free Fire Profile",
+    text: "Welcome to my gaming world! 🎮"
+  },
+  {
+    image: "qr.jpg",
+    title: "📸 My QR Photo",
+    text: "This is my photo collection. ❤️"
+  }
+];
+
+function showPage(i) {
+  document.getElementById("gallery").style.display = "none";
+  document.getElementById("detail").style.display = "block";
+  document.getElementById("bigImage").src = data[i].image;
+  document.getElementById("title").textContent = data[i].title;
+  document.getElementById("description").textContent = data[i].text;
+  window.scrollTo(0,0);
+}
+
+function goBack() {
+  document.getElementById("detail").style.display = "none";
+  document.getElementById("gallery").style.display = "block";
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
+

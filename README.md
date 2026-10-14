@@ -1,4 +1,4 @@
-<!-- MY PHOTO GALLERY -->
+
 <div class="card">
 
   <h2>🔥 MY PHOTO GALLERY 🔥</h2>
